@@ -5,16 +5,7 @@ import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const { role, setRole } = useApp();
-  const [darkMode, setDarkMode] = useState(true);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
-
+  
  
   
 
@@ -30,10 +21,10 @@ export default function Navbar() {
         
         <div className="flex items-center gap-3">
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            // onClick={() => setDarkMode(!darkMode)}
             className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
           >
-            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            {/* {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />} */}
           </button>
           
           <div className="flex items-center gap-2">

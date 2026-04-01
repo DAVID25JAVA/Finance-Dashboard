@@ -12,7 +12,7 @@ export function AppProvider({ children }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("date");
   const [sortOrder, setSortOrder] = useState("desc");
-
+ 
   
   useEffect(() => {
     const savedTransactions = localStorage.getItem("transactions");
