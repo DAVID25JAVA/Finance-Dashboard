@@ -68,7 +68,7 @@ export default function TransactionTable() {
       <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
         <h2 className="text-xl font-semibold text-white">Transactions</h2>
         
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-col sm:flex-row">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
@@ -76,7 +76,7 @@ export default function TransactionTable() {
               placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-9 pr-3 py-2 bg-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="pl-9 pr-3 py-2 w-full sm:w-0 bg-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           

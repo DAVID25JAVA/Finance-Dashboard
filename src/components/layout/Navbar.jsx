@@ -15,6 +15,9 @@ export default function Navbar() {
     }
   }, [darkMode]);
 
+ 
+  
+
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-4">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
