@@ -1,5 +1,13 @@
 "use client";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  CartesianGrid,
+} from "recharts";
 import { useApp } from "@/context/AppContext";
 
 export default function BalanceChart() {
@@ -7,17 +15,17 @@ export default function BalanceChart() {
 
   // Calculate running balance over time
   const getChartData = () => {
-    const sortedTransactions = [...transactions].sort((a, b) => 
-      new Date(a.date) - new Date(b.date)
+    const sortedTransactions = [...transactions].sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
     );
-    
+
     let runningBalance = 0;
-    return sortedTransactions.map(t => {
+    return sortedTransactions.map((t) => {
       runningBalance += t.amount;
       return {
         date: new Date(t.date).toLocaleDateString(),
         balance: runningBalance,
-        amount: t.amount
+        amount: t.amount,
       };
     });
   };
@@ -43,20 +51,20 @@ export default function BalanceChart() {
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
           <XAxis dataKey="date" stroke="#9CA3AF" />
           <YAxis stroke="#9CA3AF" />
-          <Tooltip 
-            contentStyle={{ 
-              backgroundColor: '#1F2937', 
-              border: 'none',
-              borderRadius: '8px',
-              color: '#fff'
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "#1F2937",
+              border: "none",
+              borderRadius: "8px",
+              color: "#fff",
             }}
           />
-          <Line 
-            type="monotone" 
-            dataKey="balance" 
-            stroke="#10B981" 
+          <Line
+            type="monotone"
+            dataKey="balance"
+            stroke="#10B981"
             strokeWidth={2}
-            dot={{ fill: '#10B981', strokeWidth: 2 }}
+            dot={{ fill: "#10B981", strokeWidth: 2 }}
           />
         </LineChart>
       </ResponsiveContainer>

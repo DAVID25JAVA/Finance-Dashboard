@@ -13,7 +13,7 @@ export function AppProvider({ children }) {
   const [sortBy, setSortBy] = useState("date");
   const [sortOrder, setSortOrder] = useState("desc");
 
-  // Load data from localStorage on mount
+  
   useEffect(() => {
     const savedTransactions = localStorage.getItem("transactions");
     if (savedTransactions) {
@@ -23,7 +23,7 @@ export function AppProvider({ children }) {
     }
   }, []);
 
-  // Save to localStorage whenever transactions change
+  
   useEffect(() => {
     if (transactions.length > 0) {
       localStorage.setItem("transactions", JSON.stringify(transactions));
